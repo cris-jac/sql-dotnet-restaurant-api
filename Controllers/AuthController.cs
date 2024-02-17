@@ -87,7 +87,8 @@ public class AuthController : ControllerBase
 
         _response.StatusCode = HttpStatusCode.BadRequest;
         _response.IsSuccess = false;
-        _response.ErrorMessages.Add("Error while registering");
+        // _response.ErrorMessages.Add("Error while registering");
+        _response.ErrorMessages.AddRange(result.Errors.Select(e => e.Description));
         return BadRequest(_response);
     }
 
@@ -166,9 +167,9 @@ public class AuthController : ControllerBase
         catch (System.Exception ex)
         {
             _response.IsSuccess = false;
-            _response.StatusCode = HttpStatusCode.BadRequest;
+            _response.StatusCode = HttpStatusCode.InternalServerError;
             _response.ErrorMessages.Add(ex.ToString());
-            return BadRequest(_response);
+            return StatusCode((int)_response.StatusCode, _response);
         }
     }
 }

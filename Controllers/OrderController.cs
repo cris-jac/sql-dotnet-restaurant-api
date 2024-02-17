@@ -5,6 +5,7 @@ using RestaurantAPI.Models.DTO;
 using RestaurantAPI.Utilities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using RestaurantAPI.Helpers;
 
 namespace RestaurantAPI.Controllers;
 
@@ -92,7 +93,7 @@ public class OrderController : ControllerBase
                 ContactEmail = orderHeaderDto.ContactEmail,
                 ApplicationUserId = orderHeaderDto.ApplicationUserId,
                 OrderTotal = orderHeaderDto.OrderTotal,
-                OrderDate = DateTime.Now,
+                OrderDate = DateTime.UtcNow,
                 StripePaymentIntentId = orderHeaderDto.StripePaymentIntentId,
                 TotalItems = orderHeaderDto.TotalItems,
                 Status = string.IsNullOrEmpty(orderHeaderDto.Status) ? SD.status_pending : orderHeaderDto.Status
@@ -110,7 +111,8 @@ public class OrderController : ControllerBase
                         ItemName = orderDetailDto.ItemName,
                         MenuItemId = orderDetailDto.MenuItemId,
                         Price = orderDetailDto.Price,
-                        Quantity = orderDetailDto.Quantity
+                        Quantity = orderDetailDto.Quantity,
+                        Image = orderDetailDto.Image
                     };
 
                     _db.OrderDetails.Add(orderDetails);
@@ -128,7 +130,8 @@ public class OrderController : ControllerBase
         catch (System.Exception ex)
         {
             _response.IsSuccess = false;
-            _response.ErrorMessages = new List<string>() { ex.ToString() };
+            // _response.ErrorMessages = new List<string>() { ex.ToString() };
+            _response.ErrorMessages = ErrorHelper.ExtractErrorMessages(ex);
         }
 
         return _response;
