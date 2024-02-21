@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using RestaurantAPI.Data;
@@ -11,9 +12,11 @@ using RestaurantAPI.Data;
 namespace RestaurantAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240221094133_Update_Seed_Images")]
+    partial class Update_Seed_Images
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -294,7 +297,7 @@ namespace RestaurantAPI.Migrations
                             Id = 1,
                             Category = "Sopas",
                             Description = "Este plato presenta una variedad de vegetales cocinados en un caldo sabroso. Es una opción saludable y nutritiva, a la vez reconfortante y deliciosa.",
-                            Image = "images/items/vinitha-v-aApxuprXL_4-unsplash.jpg",
+                            Image = "/src/assets/items/vinitha-v-aApxuprXL_4-unsplash.jpg",
                             Name = "Sopa de Verduras",
                             PriceInUSD = 8.9900000000000002,
                             SpecialTag = "Especialidad de la casa"
@@ -304,7 +307,7 @@ namespace RestaurantAPI.Migrations
                             Id = 2,
                             Category = "Ensaladas",
                             Description = "Patatas rojas asadas, palta, frijoles negros y col rizada cruda se mezclan con una deliciosa vestidura de limón en esta ensalada de remolacha roja vegetariana.",
-                            Image = "images/items/kostiantyn-vierkieiev-86L7IAWiNLE-unsplash.jpg",
+                            Image = "/src/assets/items/kostiantyn-vierkieiev-86L7IAWiNLE-unsplash.jpg",
                             Name = "Ensalada de Remolacha Roja con Crema Vistaña",
                             PriceInUSD = 12.99,
                             SpecialTag = ""
@@ -314,7 +317,7 @@ namespace RestaurantAPI.Migrations
                             Id = 3,
                             Category = "Ensaladas",
                             Description = "Cargada con nueces, así como frutas secas y frescas, esta ensalada vegetariana es ideal como un delicioso almuerzo ligero.",
-                            Image = "images/items/monika-grabkowska-pCxJvSeSB5A-unsplash.jpg",
+                            Image = "/src/assets/items/monika-grabkowska-pCxJvSeSB5A-unsplash.jpg",
                             Name = "Ensalada de Lechuga Rallada con Crema Vistaña y Miel",
                             PriceInUSD = 9.4900000000000002,
                             SpecialTag = ""
@@ -324,7 +327,7 @@ namespace RestaurantAPI.Migrations
                             Id = 4,
                             Category = "Platos principales",
                             Description = "Los vegetales asados, las frijoles sabrosos y la crema de palta limón-ajo se colocan sobre una cama de arroz de cilantro-limón en este delicioso burrito bowl vegetariano.",
-                            Image = "images/items/eugen-kucheruk-TvcjBk5y0wU-unsplash.jpg",
+                            Image = "/src/assets/items/eugen-kucheruk-TvcjBk5y0wU-unsplash.jpg",
                             Name = "Burrito Vegetariano con Crema de Palta",
                             PriceInUSD = 11.49,
                             SpecialTag = "Mejor valorado"
@@ -334,7 +337,7 @@ namespace RestaurantAPI.Migrations
                             Id = 5,
                             Category = "Platos principales",
                             Description = "Finado con una deliciosa salsa de curry verde, este plato vegetal es el más saludable que jamás hayas probado.",
-                            Image = "images/items/pirata-studio-film-78t6dVjtJl8-unsplash.jpg",
+                            Image = "/src/assets/items/pirata-studio-film-78t6dVjtJl8-unsplash.jpg",
                             Name = "Curry Verde para Buda",
                             PriceInUSD = 13.99,
                             SpecialTag = ""
@@ -344,7 +347,7 @@ namespace RestaurantAPI.Migrations
                             Id = 6,
                             Category = "Guarniciones",
                             Description = "La ratatouille -una combinación clásica de verduras tardías veranos-, cocinada hasta la perfección, es un ideal compañero para la polenta de queso de cabra cremoso.",
-                            Image = "images/items/max-griss-x_ObRUc51S0-unsplash.jpg",
+                            Image = "/src/assets/items/max-griss-x_ObRUc51S0-unsplash.jpg",
                             Name = "Polenta de Queso de Cabra con Ratatouille",
                             PriceInUSD = 15.99,
                             SpecialTag = "Especialidad del Chef"
@@ -354,7 +357,7 @@ namespace RestaurantAPI.Migrations
                             Id = 7,
                             Category = "Ensaladas",
                             Description = "Esta ensalada cargada está llena hasta el borde y es ideal para comer.",
-                            Image = "images/items/sonny-mauricio-yhc4pSbl01A-unsplash.jpg",
+                            Image = "/src/assets/items/sonny-mauricio-yhc4pSbl01A-unsplash.jpg",
                             Name = "Ensalada Curry con Quinoa",
                             PriceInUSD = 10.49,
                             SpecialTag = ""
@@ -364,7 +367,7 @@ namespace RestaurantAPI.Migrations
                             Id = 8,
                             Category = "Sopas",
                             Description = "Suave y brillantemente colorido, este caldo vegano curry es profundamente amado en nuestros hogares.",
-                            Image = "images/items/matthew-hamilton-RA4mwm9_jKA-unsplash.jpg",
+                            Image = "/src/assets/items/matthew-hamilton-RA4mwm9_jKA-unsplash.jpg",
                             Name = "Caldo de Calabaza con Curry",
                             PriceInUSD = 8.9900000000000002,
                             SpecialTag = ""
@@ -374,7 +377,7 @@ namespace RestaurantAPI.Migrations
                             Id = 9,
                             Category = "Ensaladas",
                             Description = "Vestida con una deliciosa vestidura limón-cebolla, las semillas de girasol crudas y las frambuesas secas dan vida a esta receta de ensalada primaveral.",
-                            Image = "images/items/farhad-ibrahimzade-59lfMHMZugY-unsplash.jpg",
+                            Image = "/src/assets/items/farhad-ibrahimzade-59lfMHMZugY-unsplash.jpg",
                             Name = "Ensalada Primaveral con Trigo y Vistaña Limón-Cebolla",
                             PriceInUSD = 12.49,
                             SpecialTag = ""
@@ -384,7 +387,7 @@ namespace RestaurantAPI.Migrations
                             Id = 10,
                             Category = "Sopas",
                             Description = "La sopa cremosa hecha con manzanas dulces, ajo y romero es la perfecta sopa cómoda para el otoño.",
-                            Image = "images/items/cala-w6ftFbPCs9I-unsplash.jpg",
+                            Image = "/src/assets/items/cala-w6ftFbPCs9I-unsplash.jpg",
                             Name = "Caldo de Calabaza con Manzanas",
                             PriceInUSD = 14.99,
                             SpecialTag = ""
@@ -394,7 +397,7 @@ namespace RestaurantAPI.Migrations
                             Id = 11,
                             Category = "Platos principales",
                             Description = "Mac & Cheese es un plato vegetariano totalmente cómodo. Está listo en solo quince minutos.",
-                            Image = "images/items/tina-witherspoon-A8Gze997X-E-unsplash.jpg",
+                            Image = "/src/assets/items/tina-witherspoon-A8Gze997X-E-unsplash.jpg",
                             Name = "Mac & Cheese",
                             PriceInUSD = 9.9900000000000002,
                             SpecialTag = ""
@@ -404,7 +407,7 @@ namespace RestaurantAPI.Migrations
                             Id = 12,
                             Category = "Sopas",
                             Description = "Ramen Noodles Sésamo-Ajo es una versión única del clásico plato de fideos ramen, con sabores de sésamo y ajo.",
-                            Image = "images/items/ikhsan-baihaqi-RwAXb8Hv_sU-unsplash.jpg",
+                            Image = "/src/assets/items/ikhsan-baihaqi-RwAXb8Hv_sU-unsplash.jpg",
                             Name = "Ramen Sésamo-Ajo con Fideos",
                             PriceInUSD = 7.0,
                             SpecialTag = ""
@@ -414,7 +417,7 @@ namespace RestaurantAPI.Migrations
                             Id = 13,
                             Category = "Guarniciones",
                             Description = "Vuelve siempre al queso asado. Almuerzo, cena o merienda -este es un plato vegetariano totalmente cómodo para todos los momentos del día.",
-                            Image = "images/items/asnim-ansari-SqYmTDQYMjo-unsplash.jpg",
+                            Image = "/src/assets/items/asnim-ansari-SqYmTDQYMjo-unsplash.jpg",
                             Name = "Queso asado",
                             PriceInUSD = 5.9900000000000002,
                             SpecialTag = "Mejor valorado"
@@ -424,7 +427,7 @@ namespace RestaurantAPI.Migrations
                             Id = 14,
                             Category = "Platos principales",
                             Description = "La salsa de soja-limón-chile picante hace que estos rollitos vegetarianos sean simplemente deliciosos. ",
-                            Image = "images/items/max-griss-Spp1G283dow-unsplash.jpg",
+                            Image = "/src/assets/items/max-griss-Spp1G283dow-unsplash.jpg",
                             Name = "Rollos De Tofu ",
                             PriceInUSD = 10.49,
                             SpecialTag = "Especialidad del Chef"
@@ -434,7 +437,7 @@ namespace RestaurantAPI.Migrations
                             Id = 15,
                             Category = "Guarniciones",
                             Description = "Sabrosa y extraordinariamente nutritiva, esta receta de salsa de nueces y lentejas Boloñesa es ideal para los comensales vegetarianos.",
-                            Image = "images/items/homescreenify-sA3wymYqyaI-unsplash.jpg",
+                            Image = "/src/assets/items/homescreenify-sA3wymYqyaI-unsplash.jpg",
                             Name = "Salsa de Nueces y Lentejas Boloñesa",
                             PriceInUSD = 10.99,
                             SpecialTag = "Especialidad de la casa"
