@@ -8,33 +8,33 @@
 
 
 ## Installation
-1. Clone from github, using this command:
+1. Clone from github, using this command: \n
 ```git clone https://github.com/cris-jac/restaurantApi-NetSql.git```
 
-2. Navigate to the repository folder:
+2. Navigate to the repository folder: \n
 ```cd booksApi-NetSql```
 
-3. Build the app:
+3. Build the app: \n
 ```dotnet build```
 
-4. Set up the appsettings.Development.json:
+4. Set up the appsettings.Development.json: \n
 "ConnectionStrings": {
-	"DefaultConnection": "Server=localhost;Database=restaurantDb;Port=5432;User Id=postgres;Password=Your_Password_Here!;"
+	"DefaultConnection": "Server=localhost;Database=restaurantDb;Port=5432;User Id=postgres;Password=```Your_Password_Here!```;"
 }
 
-4.5. Optional: Insert a private key if available:
+* Optional: Insert a private key if available: \n
 "StripeSettings": {
     "SecretKey": "sk_test_Your_Secret_Key"
 }
 
-5. Create migration and update
-```dotnet ef migrations "Initial_migration"```
+5. Create migration and update \n
+```dotnet ef migrations "Initial_migration"``` \n
 ```dotnet ef database update```
 
-5.1. Optional: If entity framework is not installed
+* Optional: If entity framework is not installed \n
 ```dotnet tool install --global dotnet-ef```
 
-6. Run the app:
+6. Run the app: \n
 ```dotnet run```
 
 
