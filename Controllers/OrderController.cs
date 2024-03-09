@@ -42,7 +42,7 @@ public class OrderController : ControllerBase
         catch (System.Exception ex)
         {
             _response.IsSuccess = false;
-            _response.ErrorMessages = new List<string>() { ex.ToString() };
+            _response.ErrorMessages = ErrorHelper.ExtractErrorMessages(ex);
         }
         return _response;
     }
