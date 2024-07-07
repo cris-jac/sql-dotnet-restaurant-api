@@ -28,7 +28,7 @@ public class MenuItemController : ControllerBase
         return Ok(_response);
     }
 
-    [HttpGet("{id:int}", Name="GetMenuItem")]
+    [HttpGet("{id:int}", Name = "GetMenuItem")]
     public async Task<IActionResult> GetMenuItem(int id)
     {
         if (id == 0)
@@ -57,11 +57,6 @@ public class MenuItemController : ControllerBase
     {
         try
         {
-            // if (ModelState.IsValid)
-            // {
-            //     if (menuItemCreateDto.File == null)
-            // }
-
             MenuItem menuItemToCreate = new()
             {
                 Name = menuItemCreateDto.Name,
@@ -93,10 +88,6 @@ public class MenuItemController : ControllerBase
     {
         try
         {
-            // if (ModelState.IsValid)
-            // {
-            //     if (menuItemCreateDto.File == null)
-            // }
 
             if (menuItemUpdateDto == null || id != menuItemUpdateDto.Id)
             {
@@ -109,13 +100,13 @@ public class MenuItemController : ControllerBase
             {
                 return BadRequest();
             }
-          
+
             menuItemFromDb.Name = menuItemUpdateDto.Name;
             menuItemFromDb.PriceInUSD = menuItemUpdateDto.Price;
             menuItemFromDb.Category = menuItemUpdateDto.Category;
             menuItemFromDb.SpecialTag = menuItemUpdateDto.SpecialTag;
             menuItemFromDb.Description = menuItemUpdateDto.Description;
-            
+
 
             _dbContext.MenuItems.Update(menuItemFromDb);
             await _dbContext.SaveChangesAsync();
@@ -138,11 +129,6 @@ public class MenuItemController : ControllerBase
     {
         try
         {
-            // if (ModelState.IsValid)
-            // {
-            //     if (menuItemCreateDto.File == null)
-            // }
-
             if (id == 0)
             {
                 _response.StatusCode = HttpStatusCode.BadRequest;
